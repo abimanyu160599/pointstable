@@ -1,0 +1,352 @@
+body{
+  padding: 50px;
+  text-align: center;
+}
+
+.abi{
+  position: absolute;
+  right: 28px;
+  top: 20px;
+  background: #f9e0ae;
+  padding: 8px;
+  border-radius: 11px;
+  font-family: 'Staatliches', cursive;
+  font-size: 21px;
+  border: none;
+}
+
+.abi:hover{
+  background-color: #fc8621;
+}
+
+.teambody{
+  background-color: #682c0e;
+}
+
+.matchbody{
+  background-color: #a5a39d;
+}
+
+.pointstable {
+  border: 1px solid black;
+  border-collapse: collapse;
+  margin-left: 7%;
+  background-color: #f9e0ae;
+}
+
+.containerone{
+  background-color: #fc8621;
+     padding: 6px 124px 37px 139px;
+    margin: 39px 269px 100px 302px;
+}
+
+.containertwo{
+ background-color: #a20a0a;
+ padding: 40px 124px 30px 139px;
+margin: 39px 269px 100px 302px;
+font-size: 22px;
+
+}
+
+.innercontainerone{
+  background-color: #ffa36c;
+  padding: 30px;
+  font-family: 'Anton', sans-serif;
+  color: #540b0e;
+
+}
+
+.innercontainertwo{
+  background-color: #ffa36c;
+  padding: 30px;
+  font-family: 'Anton', sans-serif;
+  color: #540b0e;
+}
+
+
+h1{
+  font-family: 'Staatliches', cursive;
+  font-size: 42px;
+}
+
+.headmatch{
+  color: #bfb7b7;
+}
+
+.contenth{
+  font-family: 'Oswald', sans-serif;
+    font-size: 17px
+}
+
+.helpm{
+    background-color: #ffa36c;
+padding: 10px;
+margin: 5px;
+position: absolute;
+right: 10px;
+top: 115px;
+height: 253px;
+width: 218px;
+display: none;
+}
+
+.stitle{
+  font-family: 'Staatliches', cursive;
+    font-size: 22px;
+}
+
+.helpbuttonm{
+  background: #ffa36c;
+    position: absolute;
+    right: 24px;
+    top: 67px;
+    padding: 5px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #682c0e;
+    font-family: 'Oswald';
+    font-size: 18px;
+    border: none;
+    width: 66px;
+}
+
+.helpbuttonm:hover{
+    background: #ffce89;
+}
+
+
+.contentm{
+  font-family: 'Anton', sans-serif;
+    color: #540b0e;
+    font-size: 18px;
+}
+
+.Helpp{
+      width: 200px;
+      height: 294px;
+      position: absolute;
+      padding: 10px 11px 38px 11px;
+      right: 10px;
+      top: 72px;
+      background: #f9e0ae;
+      color: black;
+      display: none;
+}
+
+                                                            /* buttons */
+
+
+
+.addteambtn{
+  font-family: 'Oswald', sans-serif;
+  font-size: 14px;
+  margin-top: 9px;
+  padding-bottom: 4px;
+  margin-left: 5px;
+  background-color: #f9e0ae;
+  border: 1px solid black;
+}
+
+.addteambtn:hover{
+  background-color: #db6400;
+}
+
+.selectteamformatchbtn{
+  font-family: 'Oswald', sans-serif;
+  font-size: 21px;
+  margin-top: 8px;
+  background-color: #f9e0ae;
+  border: 1px solid black;
+}
+
+.selectteamformatchbtn:hover{
+  background-color: #db6400;
+}
+
+
+.submitmatch{
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 21px;
+  border: none;
+  background-color: #cec4a8;
+  color: #960a0a;
+  font-family: 'Anton', sans-serif;
+  font-size: 20px;
+}
+
+.submitmatch:hover{
+  background-color: #f9e0ae;
+  color: black;
+}
+
+.deletebtn{
+  padding: 3px 23px;
+  border-radius: 8px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 15px;
+  margin: 4px;
+  border: none;
+  background-color: white;
+}
+
+.deletebtn:hover{
+  background-color: red;
+  color: white;
+}
+
+.returnpt {
+  position: absolute;
+  left: 55px;
+  top: 30px;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  background-color: #ffa36c;
+}
+
+.returnpt a{
+  text-decoration: none;
+  color: #682c0e;
+    font-family: 'Oswald';
+    font-size: 25px;
+}
+
+.returnpt:hover{
+  background-color:#ffce89;
+}
+
+.returnpt a:hover{
+  color: #540b0e;
+}
+
+.linkmatch{
+text-decoration: none;
+color: #960a0a;
+}
+
+.refmatc{
+  background: #ffa36c;
+position: absolute;
+right: 24px;
+top: 22px;
+padding: 5px;
+border-radius: 10px;
+text-decoration: none;
+  color: #682c0e;
+font-family: 'Oswald';
+font-size: 20px;
+}
+
+.refmatc:hover{
+  background: #ffce89;
+}
+
+.viewpt{
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 13px;
+    border: none;
+    margin-left: 42px;
+    background: #f9e0ae;
+    font-family: 'Oswald', sans-serif;
+    font-size: 16px;
+}
+
+.viewpt:hover{
+  background-color:#fc8621;
+}
+
+.viewpta{
+  text-decoration: none;
+  color: black;
+}
+
+.searchbtn{
+  padding: 7px;
+  border-radius: 11px;
+  border: none;
+  margin-left: 45px;
+  background: #f9e0ae;
+  font-family: 'Oswald', sans-serif;
+  font-size: 16px;
+}
+
+.searchbtn:hover{
+  background-color:#fc8621;
+}
+
+.searchbar{
+  height: 22px;
+  width: 109px;
+  margin-left: 0;
+}
+
+.name{
+  color: white;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.searchpoint{
+padding: 0 5px 4px 5px;
+ margin-left: 6px;
+ margin-right: -45px;
+ background:#f9e0ae;
+ font-family: 'Oswald', sans-serif;
+  font-size: 15px;
+  border: none;
+  border-radius: 10px;
+}
+
+.searchpoint:hover{
+  background-color:#db6400;
+}
+
+.searchbox{
+      background: #fc8621;
+      margin: 20px auto 0 auto;
+      width: 198px;
+      padding: 19px 35px 22px 0;
+}
+
+.winnername, .losername{
+  border: none;
+}
+
+                                                                              /* table */
+
+
+
+
+
+th{
+    border: 1px solid black;
+    font-family: 'Oswald', sans-serif;
+    font-size: 23px;
+    padding: 10px;
+}
+
+tr td{
+    border: 1px solid black;
+    padding: 5px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 18px;
+}
+.input{
+  height: 24px;
+width: 97px;
+margin-right: 9px;
+}
+
+.select{
+  text-decoration: none;
+  color: black;
+}
+
+ .searchbox
+{
+  display: none;
+}

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Match</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+   <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Oswald&family=Passion+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body class="matchbody">
+    <button type="button" class="helpbuttonm" onclick="togglem()" name="button">Help</button>
+    <div class="helpm" style="display:none" id="helpm">
+      <p class="contentm">winner gets 3 points</p>
+      <p class="contentm">Loser gets 0 points</p>
+      <p class="contentm">Tie gives a point to each team</p>
+      <p class="contentm">If the team you're looking for is not in dropdown refresh the page and try again</p>
+    </div>
+    <a class="refmatc" href="/match">Refresh</a>
+    <button class="returnpt" type="button" name="button"><a href="/">Go to points table</a></button>
+<div class="containertwo">
+
+        <h1 class="headmatch">Match</h1>
+
+    <form class="" action="/match" name="matchname" id="matchid" method="post">
+
+      <div class="innercontainerone">
+
+
+              <label for="firstteam">First team</label>
+               <select class="firstteam" id="firstteam" name="firstteam" onchange="running()"  required>
+                 <option value=""></option>
+                   <%  for(i=0;teamName.length>i;i++){ %>
+                     <option value="<%= teamName[i].name %>"><%= teamName[i].name %></option>
+                     <%  } %>
+               </select>
+
+
+              <label for="secondteam">Second team</label>
+                    <select class="" id="secondteam" name="secondteam" onchange="running()" required>
+                      <option value="" ></option>
+                    <%  for(i=0;teamName.length>i;i++){ %>
+                      <option value="<%= teamName[i].name %>"><%= teamName[i].name %></option>
+                      <%  } %>
+                    </select>
+
+            </div>
+
+    <br>
+
+    <div class="innercontainertwo">
+
+              <label for="">Match between</label><br>
+            <select class="winnername" id="winnername" name="winnername" required>
+            </select> &
+
+            <select class="losername" id="losername" name="losername" required>
+
+            </select><br><br>
+
+              <label for="">Tie</label><br>
+                <input type="radio" name="tie" onclick="disable()" value="yes" required>yes
+                <input type="radio" name="tie" onclick="enable()" value="no" >no
+
+                                     <div class="toggle" id="toggle">
+                                          <label for="winner">winner</label>
+                                          <select class="" id="winner" name="winner" onchange="deleteopt()" required>
+                                          </select>
+
+                                          <label for="loser">loser</label>
+                                          <select class="" id="loser" name="loser" required>
+                                          </select>
+                                     </div>
+   <br>
+  </div>
+    <input class="submitmatch" type="Submit" name="" value="Submit">
+    </form>
+
+  </div>
+
+<script type="text/javascript">
+
+function deleteopt(){
+    var e = document.getElementById("winner");
+    var strUser = e.options[e.selectedIndex].text;
+    var f = document.getElementById("loser");
+    for (var i=0; i<f.length; i++) {
+        if (f.options[i].value == strUser)
+            f.remove(i);
+    }
+}
+
+function running(){
+  var selectone= document.getElementById('winner');
+  var selecttwo= document.getElementById('loser');
+  var actualwinner = document.getElementById("winnername");
+  var actualloser = document.getElementById('losername');
+
+  for (var i=0; i<selectone.length; i++) {
+          selectone.remove(i);
+  }
+  for (var j=0; j<selecttwo.length; j++) {
+        selecttwo.remove(j);
+  }
+  for (var i=0; i<actualwinner.length; i++) {
+          actualwinner.remove(i);
+  }
+  for (var j=0; j<actualloser.length; j++) {
+        actualloser.remove(j);
+  }
+
+  var selectone= document.getElementById('winner');
+  var selecttwo= document.getElementById('loser');
+  var actualwinner = document.getElementById("winnername");
+  var actualloser = document.getElementById('losername');
+
+  var selectedteamone =  matchname.firstteam[matchname.firstteam.selectedIndex].text;
+  var selectedteamtwo =  matchname.secondteam[matchname.secondteam.selectedIndex].text;
+
+
+  var optionone = document.createElement("OPTION");
+  optionone.value =selectedteamone;
+  optionone.innerHTML = selectedteamone;
+
+
+  var hello = document.createElement("OPTION");
+  hello.value =selectedteamone;
+  hello.innerHTML = selectedteamone;
+
+
+  var optiontwo = document.createElement("OPTION");
+  optiontwo.value =selectedteamtwo;
+  optiontwo.innerHTML = selectedteamtwo;
+  selectone.appendChild(optionone);
+  selectone.appendChild(optiontwo);
+
+  actualwinner.appendChild(hello);
+
+  var optionone1 = document.createElement("OPTION");
+  optionone1.value =selectedteamone;
+  optionone1.innerHTML = selectedteamone;
+  var optiontwo1 = document.createElement("OPTION");
+  optiontwo1.value =selectedteamtwo;
+  optiontwo1.innerHTML = selectedteamtwo;
+
+  var bye = document.createElement("OPTION");
+  bye.value =selectedteamtwo;
+  bye.innerHTML = selectedteamtwo;
+
+  selecttwo.appendChild(optionone1);
+  selecttwo.appendChild(optiontwo1);
+
+
+  actualloser.appendChild(bye);
+  if(selectone.length=== 3 && selecttwo.length ===3){
+
+    document.getElementById("firstteam").disabled = true;
+    document.getElementById("secondteam").disabled = true;
+
+  }
+}
+
+function runningone(){
+  var selectone= document.getElementById('winner');
+  var selecttwo= document.getElementById('loser');
+
+  // for (var i=0; i<selectone.length; i++) {
+  //         selectone.remove(i);
+  // }
+  // for (var j=0; j<selecttwo.length; j++) {
+  //       selecttwo.remove(j);
+  // }
+  var selectone= document.getElementById('winner');
+  var selecttwo= document.getElementById('loser');
+  var selectedteamone =  matchname.firstteam[matchname.firstteam.selectedIndex].text;
+
+  var optionone = document.createElement("OPTION");
+  optionone.value =selectedteamone;
+  optionone.innerHTML = selectedteamone;
+  selectone.appendChild(optionone);
+  selecttwo.appendChild(optionone);
+
+}
+
+function runningtwo(){
+  var selectone= document.getElementById('winner');
+  var selecttwo= document.getElementById('loser');
+
+  // for (var i=0; i<selectone.length; i++) {
+  //         selectone.remove(i);
+  // }
+  // for (var j=0; j<selecttwo.length; j++) {
+  //       selecttwo.remove(j);
+  // }
+  var selectone= document.getElementById('winner');
+  var selecttwo= document.getElementById('loser');
+    var selectedteamtwo =  matchname.secondteam[matchname.secondteam.selectedIndex].text;
+
+  var optiontwo = document.createElement("OPTION");
+  optiontwo.value =selectedteamone;
+  optiontwo.innerHTML = selectedteamone;
+  selecttwo.appendChild(optiontwo);
+  selecttwo.appendChild(optiontwo);
+
+}
+
+function disable() {
+    document.getElementById("winner").disabled=true;
+      document.getElementById("loser").disabled=true;
+}
+
+function enable() {
+  document.getElementById("winner").disabled=false;
+    document.getElementById("loser").disabled=false;
+}
+
+function togglem(){
+
+  var y = document.getElementById('helpm');
+  if(y.style.display==="none"){
+    y.style.display="block";
+  }
+  else{
+    y.style.display="none"
+  }
+}
+
+</script>
+
+</body>
+</html>

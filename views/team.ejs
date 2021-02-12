@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Points table</title>
+    <link rel="stylesheet" href="css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Oswald&family=Passion+One&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital@1&display=swap" rel="stylesheet" >
+
+  </head>
+  <body class="teambody">
+ <p class="name">Created by <span>Abimanyu</span><br> abimanyukumaraan@gmail.com</p>
+
+  <button class="abi" onclick="myFunctionH()">Help</button>
+
+  <div class="Helpp" style="display:none" id="Helpp">
+    <p class="contenth">Use this app to match against teams of your favourite leagues</p>
+    <p class="contenth">You can predict the minimum number of wins or the teams to win to reach the finals using this app</p>
+      <h3 class="stitle">Search:</h3>
+      <p class="contenth">Use the search option to search for teams with same points</p>
+  </div>
+
+
+
+    <input type="button" id="searchbtn" class="searchbtn" name="" onclick="toggle()" value="Search teams">
+
+    <div class="searchbox" style="display:none" id="searchbox">
+        <form class="" action="/" method="get">
+          <input type="number" class="searchbar" onkeyup="this.value = this.value.toUpperCase();" placeholder="    enter points" name="search" value="" autocomplete="off">
+          <input type="submit" class="searchpoint" name="" value="Search">
+          </form>
+  </div>
+<br>
+<button class="viewpt" type="button" name="button"><a class="viewpta" href="/">View complete points table</a></button>
+
+    <div class="containerone">
+      <h1>Points table</h1>
+      <table class="pointstable">
+
+        <tr>
+          <th>Team name</th>
+          <th>Win</th>
+          <th>tie</th>
+          <th>Lose</th>
+          <th>Points</th>
+          <th>delete</th>
+        </tr>
+  <%  for(i=0;teamName.length>i;i++){ %>
+    <form class="" action="/delete" method="post">
+      <tr>
+        <td> <%= teamName[i].name %> </td>
+        <td> <%= teamName[i].win %> </td>
+        <td> <%= teamName[i].tie %> </td>
+        <td> <%= teamName[i].lose %> </td>
+        <td> <%= teamName[i].points %> </td>
+        <td ><button class="deletebtn" onclick="return confirm('Deleting might collapse the table!')" type="submit" name="delete" value="<%= teamName[i].name %>">Delete</button></td>
+      </tr>
+      </form>
+  <%  } %>
+      </table>
+
+
+
+
+            <form class="" action="/" method="post">
+              <input class="input" type="text" name="input" autocomplete="off" value="" onkeyup="this.value = this.value.toUpperCase();" required>
+              <button type="submit" class="addteambtn" name="button">ADD TEAM</button>
+            </form>
+            <button type="button" class="selectteamformatchbtn" name="button"><a href="/match" class="select">Select teams for match</a></button>
+
+    </div>
+    <script type="text/javascript">
+
+    function deleteobj(){
+
+       var retVal = confirm("Deleting a team might collapse the table!");
+        if (retVal == true)
+        {
+
+            return true;
+        }
+        else
+        {
+
+            return false;
+        }
+
+    }
+
+
+      function toggle() {
+      var x = document.getElementById("searchbox");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+        y=getElementById("searchbtn");}
+      else {
+        x.style.display = "none";
+        getElementById("searchbtn").value="search teams";
+      }
+                  }
+
+
+                  function myFunctionH() {
+                    var x = document.getElementById("Helpp");
+                    if (x.style.display === "block") {
+                      x.style.display = "none";
+                    } else {
+                      x.style.display = "block";
+                    }
+                  }
+
+    </script>
+  </body>
+</html>
