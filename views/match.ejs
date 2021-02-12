@@ -28,7 +28,7 @@
       <div class="innercontainerone">
 
 
-              <label for="firstteam">First team</label>
+              <label class="labels" for="firstteam">First team</label>
                <select class="firstteam" id="firstteam" name="firstteam" onchange="running()"  required>
                  <option value=""></option>
                    <%  for(i=0;teamName.length>i;i++){ %>
@@ -37,8 +37,8 @@
                </select>
 
 
-              <label for="secondteam">Second team</label>
-                    <select class="" id="secondteam" name="secondteam" onchange="running()" required>
+              <label class="labels" for="secondteam">Second team</label>
+                    <select class="secondteam" id="secondteam" name="secondteam" onchange="running()" required>
                       <option value="" ></option>
                     <%  for(i=0;teamName.length>i;i++){ %>
                       <option value="<%= teamName[i].name %>"><%= teamName[i].name %></option>
@@ -51,7 +51,7 @@
 
     <div class="innercontainertwo">
 
-              <label for="">Match between</label><br>
+              <label class="labelse" for="">Match between</label><br>
             <select class="winnername" id="winnername" name="winnername" required>
             </select> &
 
@@ -59,16 +59,16 @@
 
             </select><br><br>
 
-              <label for="">Tie</label><br>
+              <label  for="">Tie</label><br>
                 <input type="radio" name="tie" onclick="disable()" value="yes" required>yes
                 <input type="radio" name="tie" onclick="enable()" value="no" >no
 
                                      <div class="toggle" id="toggle">
-                                          <label for="winner">winner</label>
+                                          <label class="labelse" for="winner">winner</label>
                                           <select class="" id="winner" name="winner" onchange="deleteopt()" required>
                                           </select>
 
-                                          <label for="loser">loser</label>
+                                          <label class="labelse" for="loser">loser</label>
                                           <select class="" id="loser" name="loser" required>
                                           </select>
                                      </div>

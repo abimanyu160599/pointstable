@@ -350,3 +350,218 @@ margin-right: 9px;
 {
   display: none;
 }
+
+
+@media  ( max-width:400px ){
+
+.searchbtn{
+  font-size: 13px;
+  margin-top: 12px;
+  margin-left: 10px;
+
+}
+
+.searchbox{
+  display: block;
+width: 150px;
+height: 15px;
+padding: 4px 39px 16px 1px;
+margin: 8px -25px -20px 55px;
+}
+
+.abi{
+  font-size: 14px;
+    padding: 5px;
+    right: 9px;
+    top: 20px;
+}
+
+.Helpp{
+  width: 194px;
+
+  z-index: 1;
+top: 51px;
+border: 1px solid black;
+}
+
+.viewpt{
+  width: 148px;
+  margin-left: 15px;
+  font-size: 16px;
+
+}
+
+.viewpta{
+  font-size: 13px;
+    padding: 0px
+}
+
+.containerone{
+  position: relative;
+    height: 316px;
+    padding: 0;
+    margin: 0;
+    width: 261px;
+    left: -53px;
+    top: -3px;
+}
+
+h1{
+font-size: 21px;
+    width: 98px;
+    margin-left: 83px;
+
+}
+
+th{
+      font-size: 12px;
+}
+
+tr td{
+    font-size: 11px;
+    padding: 0;
+
+}
+
+.pointstable{
+  position: absolute;
+  margin-left: 0;
+  left: 0;
+}
+
+.input{
+  position: absolute;
+  bottom: 93px;
+  left: 61px;
+width: 57px;
+    height: 18px;
+}
+.name{
+  font-size: 12px;
+top: 16px;
+}
+
+.addteambtn{
+  position: absolute;
+  bottom: 93px;
+height: 24px;
+font-size: 12px;
+}
+
+.selectteamformatchbtn{
+  position: absolute;
+  bottom: 50px;
+    left: 49px;
+    width: 176px;
+    font-size: 15px;
+}
+
+.deletebtn{
+  width: 35px;
+padding: 2px;
+font-size: 15px;
+margin: 1px;
+}
+
+
+/* secondpage */
+
+
+
+.returnpt{
+  left: 11px;
+    top: 16px;
+    padding: 0;
+}
+
+.returnpt a{
+  font-size: 19px;
+padding: 7px;
+}
+
+.refmatc{
+  right: 6px;
+    top: 14px;
+    padding: 5px;
+      font-size: 17px;
+}
+
+.helpbuttonm{
+  right: 5px;
+    top: 61px;
+    padding: 0px;
+    font-size: 17px;
+    width: 57px;
+}
+
+
+.firstteam, .secondteam{
+  width: 41px;
+
+
+}
+
+.labels{
+  font-size: 15px;
+}
+
+.containertwo{
+  position: relative;
+  margin: 0;
+  height: 416px;
+    top: 40px;
+      width: 257px;
+      padding: 0;
+      left: -50px;
+}
+
+.headmatch{
+  padding-top: 22px;
+
+  font-size: 29px;
+margin-top: 0;
+margin-left: 88px;
+
+}
+
+.innercontainerone{
+
+    position: absolute;
+    padding: 0;
+    width: 243px;
+    left: 8px;
+    height: 42px;
+}
+
+.innercontainertwo{
+  position: absolute;
+    left: 9px;
+    width: 242px;
+    top: 125px;
+    padding: 0;
+    margin-top: 5px;
+}
+
+.helpm{
+z-index: 1;
+width: 224px;
+border: 1px solid black;
+top: 92px;
+right: 2px;
+}
+
+.submitmatch{
+  position: absolute;
+bottom: 5px;
+padding: 7px;
+left: 100px;
+font-size: 17px;
+
+}
+
+.labelse{
+  font-size: 16px;
+
+}
+
+}
