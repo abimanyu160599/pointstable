@@ -431,7 +431,7 @@ tr td{
 
 .input{
   position: absolute;
-  bottom: 84px;
+  bottom: 55px;
   left: 61px;
 width: 57px;
     height: 18px;
@@ -443,7 +443,7 @@ top: 16px;
 
 .addteambtn{
   position: absolute;
-  bottom: 84px;
+  bottom: 55px;
 height: 24px;
 font-size: 12px;
 }
