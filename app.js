@@ -91,6 +91,7 @@ app.get("/match", function(req,res){
 
 app.post("/match",async(req,res)=>{
 
+    
             var firstteamname = req.body.winnername;
             var secondteamname = req.body.losername;
 
@@ -133,7 +134,8 @@ app.post("/match",async(req,res)=>{
                 await Teammodel.updateOne({name:secondteamname},{points:updatedPointtwo,tie:updatedtieofteamtwo});
               }
               res.redirect("/");
-            }
+
+          }
             else
             {
               res.redirect("/match");
