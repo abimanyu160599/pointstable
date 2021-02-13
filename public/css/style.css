@@ -352,7 +352,7 @@ margin-right: 9px;
 }
 
 
-@media  ( max-width:450px ){
+/* @media  ( max-width:450px ){
 
 .searchbtn{
   font-size: 13px;
@@ -467,7 +467,7 @@ margin: 1px;
 /* secondpage */
 
 
-
+/*
 .returnpt{
   left: 11px;
     top: 16px;
@@ -564,4 +564,4 @@ font-size: 17px;
 
 }
 
-}
+} */ 
