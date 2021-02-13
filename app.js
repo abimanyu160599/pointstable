@@ -47,6 +47,7 @@ app.get("/",function(req,res){
                           console.log("error");
                         }
                           else{
+
                               res.render("team",{teamName:foundTeam});
                           }
                         }).sort({points:-1})
@@ -58,7 +59,7 @@ app.post("/",function(req,res){
                         var enteredname = req.body.input;
                         Teammodel.find({name:enteredname},function(err,duplicate){
                           if(err){
-                            console.log("err");
+                            console.log("err-1");
                           }
                           else{
                                 if(duplicate.length!=0){
@@ -91,7 +92,7 @@ app.get("/match", function(req,res){
 
 app.post("/match",async(req,res)=>{
 
-    
+    // try{
             var firstteamname = req.body.winnername;
             var secondteamname = req.body.losername;
 
@@ -104,13 +105,24 @@ app.post("/match",async(req,res)=>{
                 var losingTeam =  req.body.loser;
 
                 var onlypoint= await Teammodel.findOne({name:winningTeam});
+
+                if(!onlypoint){
+                  throw "error"
+                }
+
                 var pointOfWinner = onlypoint.points;
                 var numofwin = onlypoint.win;
                 var updatedPoint = pointOfWinner + 3;
                 var updatedwin = numofwin + 1;
                 await Teammodel.updateOne({name :winningTeam},{points: updatedPoint,win:updatedwin});
 
+
                 var separatedataofloser= await Teammodel.findOne({name:losingTeam});
+
+                if(!separatedataofloser){
+                  throw "error"
+                }
+
                 var numofloseofloser = separatedataofloser.lose;
                 var updatednumoflose = numofloseofloser + 1;
                 await Teammodel.updateOne({name:losingTeam},{lose:updatednumoflose});
@@ -120,6 +132,11 @@ app.post("/match",async(req,res)=>{
                 var firstteamname = req.body.winnername;
                 var secondteamname = req.body.losername;
                 var onlypointone= await Teammodel.findOne({name:firstteamname});
+                // console.log(firstteamname);
+                // if(!onlypointone){
+                //   throw "error-1"
+                // }
+
                 var pointOfWinnerone = onlypointone.points;
                 var tieofteamone = onlypointone.tie;
                 var updatedPointone = pointOfWinnerone + 1;
@@ -127,11 +144,18 @@ app.post("/match",async(req,res)=>{
                 await Teammodel.updateOne({name :firstteamname},{points: updatedPointone, tie:updatedtie});
 
                 var onlypointtwo =await Teammodel.findOne({name:secondteamname});
+
+                // if(!onlypointtwo){
+                //   throw "error-2"
+                // }
+
                 var pointOfloser = onlypointtwo.points;
                 var tieofteamtwo = onlypointtwo.tie;
                 var updatedPointtwo = pointOfloser + 1;
                 var updatedtieofteamtwo = tieofteamtwo + 1;
                 await Teammodel.updateOne({name:secondteamname},{points:updatedPointtwo,tie:updatedtieofteamtwo});
+
+
               }
               res.redirect("/");
 
@@ -140,6 +164,11 @@ app.post("/match",async(req,res)=>{
             {
               res.redirect("/match");
             }
+
+        // }
+        // catch(e){
+        //   console.log(e.message);
+        // }
         });
 
 app.post("/delete",function(req,res){
